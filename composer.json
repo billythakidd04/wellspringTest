@@ -1,0 +1,19 @@
+{
+    "name": "billy/wellspring-test",
+    "type": "project",
+    "require": {
+        "slim/slim": "^4.9",
+        "slim/psr7": "^1.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "Billy\\WellspringTest\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Bill Caffery",
+            "email": "billythakidd04@gmail.com"
+        }
+    ]
+}
