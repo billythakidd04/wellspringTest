@@ -9,6 +9,7 @@ I made the assumption that every file being uploaded will have the same format a
 I didn't set up a deployment for this as its very basic. Follow these instructions, and you should have a working site in no time. Albeit not the most gorgeous.
 
 1. Create a vhost config and host file update for whatever url you choose, this application should be domain agnostic. Mine looked something like:
+```apacheconf
         <VirtualHost *:80>
             ServerAdmin webmaster@wellspringTest.com
             DocumentRoot "C:/Users/billy/workspace/wellspringTest"
@@ -21,6 +22,7 @@ I didn't set up a deployment for this as its very basic. Follow these instructio
                 Require all granted
             </Directory>
         </VirtualHost>
+```
 2. Run the trains.sql file to build out the db
 3. Create and appropriate user or update the config in src/DB.php
 4. Install composer and run `composer update` in the root of the project to pull the required packages (I think there's 2?)
