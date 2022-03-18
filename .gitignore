@@ -1,1 +1,4 @@
 /vendor/
+.idea
+uploads/
+/trains_6.csv

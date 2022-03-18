@@ -1,10 +1,15 @@
 <?php
 
-namespace WellspringTest;
+namespace WellspringTest\src;
+
+use Exception;
 
 class Helpers
 {
 	// php function to convert csv to json format
+	/**
+	 * @throws Exception
+	 */
 	public static function csvToJson($fileName)
 	{
 		// open csv file
@@ -12,16 +17,15 @@ class Helpers
 			throw new \Exception('invalid csv file provided');
 		}
 
-		//read csv headers
-		$keys = fgetcsv($fh);
+		//read csv headers and strip white space
+		$keys = array_map('trim', fgetcsv($fh));
 
 		// parse csv rows into array
 		$json = [];
 		while ($row = fgetcsv($fh)) {
-			$json[] = array_combine($keys, $row);
+			$json[] = array_combine($keys, array_map('trim', $row));
 		}
 
-		// release file handle
 		fclose($fh);
 
 		// encode array to json
